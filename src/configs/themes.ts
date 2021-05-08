@@ -10,11 +10,17 @@ export const dark = createMuiTheme({
       default: "#212121",
       paper: "#484848",
     },
-    primary: {
+    secondary: {
       ...green,
       main: "#388e3c",
       light: "#6abf69",
       dark: "#00600f",
+      contrastText: "#fff",
+    },
+    primary: {
+      main: "#424242",
+      light: "#6d6d6d",
+      dark: "#1b1b1b",
       contrastText: "#fff",
     },
   },
