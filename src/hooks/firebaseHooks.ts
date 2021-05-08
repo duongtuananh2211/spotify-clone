@@ -1,6 +1,6 @@
 import firebase from "firebase";
 import { IFirestoreMetadata } from "interfaces";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import {
   ReactFireOptions,
   useFirestoreCollection,
@@ -40,6 +40,7 @@ export const useCollectionDataWithSuspense = <T extends object>(
 
   return useMemo(() => {
     if (!data) return [];
+
     const querySnapshot = data as firebase.firestore.QuerySnapshot;
     return querySnapshot.docs.map((snapshot) =>
       convertDocSnapshotWithMetadata<T>(snapshot, options)
