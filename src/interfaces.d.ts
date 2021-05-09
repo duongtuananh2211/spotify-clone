@@ -11,4 +11,5 @@ export interface IRoute {
   path: string;
   component: ComponentType | FunctionComponent;
   private?: boolean;
+  name: string;
 }

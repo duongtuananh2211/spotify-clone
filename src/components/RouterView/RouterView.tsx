@@ -15,19 +15,24 @@ const RouterView: React.FC<IProps> = () => {
   return (
     <>
       <Switch>
-        {routes.map(({ component: Component, path, private: Private }) => (
-          <Route
-            exact={true}
-            path={path}
-            render={() =>
-              Private ? (
-                <PrivateRoute path={path} component={Component} />
-              ) : (
-                <Component />
-              )
-            }
-          />
-        ))}
+        {routes.map(
+          ({ component: Component, path, private: Private, name = "" }) => (
+            <Route
+              key={path}
+              exact={true}
+              path={path}
+              render={() => {
+                document.title = `${name} - Spotify Clone`;
+
+                return Private ? (
+                  <PrivateRoute name={name} path={path} component={Component} />
+                ) : (
+                  <Component />
+                );
+              }}
+            />
+          )
+        )}
       </Switch>
     </>
   );

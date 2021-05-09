@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core";
-import { green } from "@material-ui/core/colors";
+import { green, grey } from "@material-ui/core/colors";
 
 export const light = createMuiTheme();
 
@@ -18,6 +18,7 @@ export const dark = createMuiTheme({
       contrastText: "#fff",
     },
     primary: {
+      ...grey,
       main: "#424242",
       light: "#6d6d6d",
       dark: "#1b1b1b",
@@ -28,5 +29,15 @@ export const dark = createMuiTheme({
     allVariants: {
       color: "#fff",
     },
+  },
+  overrides: {
+    MuiDrawer: {
+      paper: {
+        backgroundColor: "#1b1b1b",
+      },
+    },
+  },
+  shape: {
+    borderRadius: 20,
   },
 });
