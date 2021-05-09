@@ -1,16 +1,7 @@
-import {
-  Box,
-  Drawer,
-  List,
-  ListItemIcon,
-  ListItemText,
-  makeStyles,
-} from "@material-ui/core";
-import SidebarListItem from "components/SidebarListItem";
+import { Box, Drawer, makeStyles } from "@material-ui/core";
 import React from "react";
+import SidebarTabs from "widgets/SidebarTabs";
 import style from "./style";
-
-import { Home as HomeIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles(style);
 
@@ -28,16 +19,10 @@ const Sidebar: React.FC<IProps> = () => {
         open
       >
         <Box m={2}>
-          <Box className={classes.logo}></Box>
-
-          <List>
-            <SidebarListItem selected button>
-              <ListItemIcon color="primary">
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText>Home</ListItemText>
-            </SidebarListItem>
-          </List>
+          <Box ml={3}>
+            <Box className={classes.logo}></Box>
+          </Box>
+          <SidebarTabs />
         </Box>
       </Drawer>
     </>

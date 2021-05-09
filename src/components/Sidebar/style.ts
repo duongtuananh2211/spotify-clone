@@ -40,7 +40,7 @@ const style = (theme: Theme) =>
       backgroundImage: `url('${images.SPOTIFY_LOGO_FULL_WHITE.default}')`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
-      height: 100,
+      height: 60,
     },
   });
 
