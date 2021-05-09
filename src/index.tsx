@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "firebase/firestore";
+import "firebase/auth";
 import firebaseConfig from "configs/firebase-cf.json";
 import { FirebaseAppProvider } from "reactfire";
 

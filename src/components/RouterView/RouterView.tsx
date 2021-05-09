@@ -1,5 +1,6 @@
 import { useRoutes } from "contexts/RouteContext";
 import { IRoute } from "interfaces";
+import RouteProvider from "providers/RouteProvider";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
@@ -16,18 +17,32 @@ const RouterView: React.FC<IProps> = () => {
     <>
       <Switch>
         {routes.map(
-          ({ component: Component, path, private: Private, name = "" }) => (
+          ({
+            component: Component,
+            path,
+            private: Private,
+            name = "",
+            children,
+          }) => (
             <Route
               key={path}
-              exact={true}
+              exact={!Boolean(children?.length)}
               path={path}
               render={() => {
                 document.title = `${name} - Spotify Clone`;
 
                 return Private ? (
-                  <PrivateRoute name={name} path={path} component={Component} />
+                  <RouteProvider routes={children || []}>
+                    <PrivateRoute
+                      name={name}
+                      path={path}
+                      component={Component}
+                    />
+                  </RouteProvider>
                 ) : (
-                  <Component />
+                  <RouteProvider routes={children || []}>
+                    <Component />
+                  </RouteProvider>
                 );
               }}
             />

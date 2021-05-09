@@ -12,4 +12,5 @@ export interface IRoute {
   component: ComponentType | FunctionComponent;
   private?: boolean;
   name: string;
+  children?: IRoute[];
 }

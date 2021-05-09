@@ -1,5 +1,4 @@
-import RoundButton from "components/RoundButton";
-import DefaultLayout from "layouts/DefaultLayout";
+import HomeHeader from "components/HomeHeader";
 import React from "react";
 
 interface IProps {}
@@ -7,11 +6,7 @@ interface IProps {}
 const Home: React.FC<IProps> = () => {
   return (
     <>
-      <DefaultLayout>
-        <RoundButton color="primary" variant="contained">
-          Test
-        </RoundButton>
-      </DefaultLayout>
+      <HomeHeader />
     </>
   );
 };
