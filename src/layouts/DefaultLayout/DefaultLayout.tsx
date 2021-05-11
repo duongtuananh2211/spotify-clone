@@ -1,4 +1,5 @@
 import { Box } from "@material-ui/core";
+import Footer from "components/Footer";
 import RouterView from "components/RouterView";
 import Sidebar from "components/Sidebar";
 import React from "react";
@@ -13,6 +14,8 @@ const DefaultLayout: React.FC<IProps> = () => {
       <Box style={{ marginLeft: 240 }}>
         <RouterView></RouterView>
       </Box>
+
+      <Footer />
     </>
   );
 };
