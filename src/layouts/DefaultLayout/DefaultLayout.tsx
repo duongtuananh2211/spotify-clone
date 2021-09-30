@@ -1,7 +1,5 @@
-import { Box } from "@material-ui/core";
-import Footer from "components/Footer";
+import {Box, Container} from "@material-ui/core";
 import RouterView from "components/RouterView";
-import Sidebar from "components/Sidebar";
 import React from "react";
 
 interface IProps {}
@@ -9,13 +7,13 @@ interface IProps {}
 const DefaultLayout: React.FC<IProps> = () => {
   return (
     <>
-      <Sidebar />
 
-      <Box style={{ marginLeft: 240 }}>
-        <RouterView></RouterView>
-      </Box>
+       <Container maxWidth={'xl'}>
+           <Box pt={2}>
+               <RouterView></RouterView>
+           </Box>
+       </Container>
 
-      <Footer />
     </>
   );
 };

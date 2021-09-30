@@ -29,7 +29,7 @@ const RouterView: React.FC<IProps> = () => {
               exact={!Boolean(children?.length)}
               path={path}
               render={() => {
-                document.title = `${name} - Spotify Clone`;
+                document.title = `${name} - Capital Management`;
 
                 return Private ? (
                   <RouteProvider routes={children || []}>
