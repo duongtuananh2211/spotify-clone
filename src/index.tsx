@@ -5,17 +5,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "firebase/firestore";
 import "firebase/auth";
-import firebaseConfig from "configs/firebase-cf.json";
+import firebaseConfigs from "./configs/firebase-cf.json";
 import { FirebaseAppProvider } from "reactfire";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <Suspense fallback={<div>Đợi tí...</div>}>
+  <Suspense fallback={<div>Loading...</div>}>
+    <React.StrictMode>
+      <FirebaseAppProvider firebaseConfig={firebaseConfigs}>
         <App />
-      </Suspense>
-    </FirebaseAppProvider>
-  </React.StrictMode>,
+      </FirebaseAppProvider>
+    </React.StrictMode>
+  </Suspense>,
   document.getElementById("root")
 );
 

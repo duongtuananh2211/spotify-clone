@@ -32,9 +32,10 @@ const UserMenu: React.FC<IProps> = () => {
     setAnchorEl(null);
   };
 
-  const redirectTo = useCallback((path: string) => history.push(path), [
-    history,
-  ]);
+  const redirectTo = useCallback(
+    (path: string) => history.push(path),
+    [history]
+  );
 
   const handleSignOut = useCallback(async () => {
     try {
@@ -43,6 +44,8 @@ const UserMenu: React.FC<IProps> = () => {
       alert("Có lỗi xảy ra");
     }
   }, [auth]);
+
+  console.log(user);
 
   if (!user.data)
     return (

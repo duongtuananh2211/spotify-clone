@@ -6,16 +6,12 @@ export const dark = createMuiTheme({
   spacing: 5,
   palette: {
     background: {
-      default: '#D8D8D8'
-    }
+      default: "#F0F0F0",
+    },
   },
-  typography: {
-
-  },
-  overrides: {
-
-  },
+  typography: {},
+  overrides: {},
   shape: {
-    borderRadius: 5,
+    borderRadius: 10,
   },
 });

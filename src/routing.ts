@@ -1,6 +1,6 @@
 import { IRoute } from "interfaces";
 import DefaultLayout from "layouts/DefaultLayout";
-import { Home, Login } from "views";
+import { Home, Login, ListDetail } from "views";
 
 const routes: IRoute[] = [
   {
@@ -19,6 +19,11 @@ const routes: IRoute[] = [
         path: "/",
         component: Home,
         name: "Home",
+      },
+      {
+        path: "/list/:id",
+        component: ListDetail,
+        name: "ListDetail",
       },
     ],
   },
